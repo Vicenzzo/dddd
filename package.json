@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "web -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -21,7 +23,8 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
-    "vite": "^3.0.7"
+    "vite": "^3.0.7",
+    "web": "^0.0.2"
   },
   "engines": {
     "node": "16.x",

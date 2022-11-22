@@ -1,0 +1,94 @@
+
+.mainVisualizar{
+     position: relative;
+    justify-content: center;
+      margin-right: auto;
+    margin-left: auto;
+
+    width: 80%;
+  color: #1d4d96;
+    font-weight: 700;
+  }
+  
+  
+  
+  .container {
+        text-align: left;
+        width: 100%;
+  position: relative;
+    margin-right: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  background-color: #1d4d9600;
+  }
+  .mainVisualizar .dataTables_wrapper .row{
+    background-color: transparent;
+  }
+  .campos{
+        color: #2563c1;
+  }
+  
+  #curso{
+        color: #2563c1;
+  }
+  .row{
+    margin-left: 0%;
+    width: 111%;
+    background-color: #ff000000;
+    margin-right: 20%;
+    padding: 1%;
+    border-radius: 25px;
+  }
+  table{
+    margin-left: 0%;
+    padding-left: 0%;
+    width: 290%;
+    
+  }
+  
+  
+  .container tr:nth-child(odd) {
+        background-color: var(--theme-main);
+        
+  }
+  
+  
+  .container tr:nth-child(even) {
+        background-color: var(--theme-medium);
+  }
+  
+  .container th {
+        background-color: #292735;
+  }
+  
+  
+  @media (max-width: 800px) {
+  .container td:nth-child(6),
+  .container th:nth-child(6) { display: none; }
+  }
+  
+  
+  table.dataTable>tbody>tr.child span.dtr-title{
+      color: #2A5ECA;
+  }
+  table.dataTable>tbody>tr td.dados{
+  
+    color: var(--title-forms);
+  }
+  
+  input.form-control.form-control-sm{
+          background: transparent;
+  
+    border: 2px solid #2A5ECA
+  }
+.page-link{
+    color: var(--title-forms);
+    background-color: var(--theme-dark);
+}
+#example_previous{
+     color: var(--title-forms);
+    background-color: var(--theme-dark);
+}
+.dataTables_wrapper .row {
+  background-color: transparent;
+}

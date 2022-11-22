@@ -1,0 +1,54 @@
+main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  height: 100vh;
+  overflow-y: scroll;
+}
+main .container-page {
+  background: var(--theme-main);
+  padding: 3.625rem 3.125rem;
+  justify-self: center;
+  border-radius: 0.5rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+main .container-page .container-title {
+  color: var(--first-color-main);
+  padding: 0;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (max-width: 600px) {
+  main .container-page .container-title {
+    justify-content: center;
+  }
+}
+
+.container-icon {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 475px) {
+  main .container-page {
+    padding: 2.625rem 2.125rem;
+  }
+  main .container-page .container-title {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 395px) {
+  main .container-page {
+    padding: 1.625rem 1.125rem;
+  }
+  main .container-page .container-title {
+    font-size: 1.75rem;
+  }
+}/*# sourceMappingURL=Container.css.map */

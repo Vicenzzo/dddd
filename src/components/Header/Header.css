@@ -1,0 +1,231 @@
+/*===== HEADER AND NAVIGATION =====*/
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+header .accessibility {
+  background-color: var(--theme-dark);
+  height: 100%;
+  display: grid;
+  align-items: center;
+  padding: 0 0.25rem;
+  place-items: center;
+  z-index: 10;
+}
+header .accessibility .accessibility-link {
+  display: flex;
+}
+header .accessibility .accessibility-link:hover .accessibility-icon {
+  color: var(--first-color-main);
+}
+header .accessibility .accessibility-link:hover sup {
+  color: var(--first-color-main);
+}
+header .accessibility .accessibility-link .accessibility-icon {
+  font-size: 2rem;
+  align-items: center;
+  transition: color 0.2s;
+}
+header .accessibility .accessibility-link sup {
+  font-size: 0.75rem;
+  transition: color 0.2s;
+}
+header .accessibility #change-contrast {
+  background: none;
+  border: none;
+}
+header .accessibility #change-contrast.on .contrast {
+  border: 2px solid var(--contrast-dark);
+  padding: 0;
+}
+header .accessibility #change-contrast.on .contrast::before {
+  background-color: var(--contrast-dark);
+  border: none;
+  width: 0.75rem;
+  height: 1.5rem;
+  border-radius: 0 50% 50% 0;
+  transform: translateX(0.75rem);
+}
+header .accessibility #change-contrast .contrast {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  border: solid 2px var(--black);
+  cursor: pointer;
+}
+header .accessibility #change-contrast .contrast::before {
+  content: "";
+  display: inline-block;
+  width: 0.75rem;
+  height: 1.5rem;
+  border-radius: 50% 0 0 50%;
+  transition: transform 200ms;
+  background-color: var(--black);
+}
+header .accessibility #change-contrast:hover .contrast {
+  border: 2px solid var(--first-color-main);
+}
+header .accessibility #change-contrast:hover .contrast::before {
+  background-color: var(--first-color-main);
+}
+header .accessibility #change-contrast:hover .contrast.on {
+  border: 2px solid var(--first-color-main);
+}
+header .accessibility #change-contrast:hover .contrast.on::before {
+  background-color: var(--first-color-main);
+  border: none;
+}
+header .nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 100vh;
+  padding: 3rem 0;
+  min-width: 20rem;
+  flex-wrap: nowrap;
+  /* By Peter Pool */
+}
+header .nav .nav-logo {
+  width: 11rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  content: url(../../assets/logo.png);
+}
+header .nav .nav-menu {
+  overflow-y: scroll;
+  max-height: 20rem;
+}
+header .nav .nav-menu::-webkit-scrollbar {
+  width: 3px;
+}
+header .nav .nav-menu::-webkit-scrollbar-track {
+  background: var(--theme-medium);
+}
+header .nav .nav-menu::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 3px solid var(--theme-dark);
+}
+@media screen and (max-width: 1150px) {
+  header .nav .nav-menu {
+    position: fixed;
+    left: 0;
+    top: 13rem;
+    height: 0;
+    width: 100vw;
+    background-color: var(--theme-medium);
+    text-align: center;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 1;
+    visibility: hidden;
+    border-radius: 0 0 20px 20px;
+  }
+}
+header .nav .nav-menu.show-menu {
+  padding: 2rem 0;
+  height: 18.375rem;
+  visibility: visible;
+}
+header .nav .nav-menu .nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+header .nav .nav-link {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+header .nav .nav-link.change-theme {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  color: var(--first-color-main);
+}
+header .nav .nav-link.change-theme.on .checkbox {
+  border: 2px solid var(--first-color-main);
+  padding: 0;
+}
+header .nav .nav-link.change-theme.on .checkbox::before {
+  background-color: var(--first-color-main);
+  border: none;
+  width: 1rem;
+  height: 1rem;
+  transform: translateX(0.75rem);
+}
+header .nav .nav-link.change-theme .checkbox {
+  width: 2rem;
+  height: 1.25rem;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 1rem;
+  border: 2px solid var(--first-color-main);
+  cursor: pointer;
+}
+header .nav .nav-link.change-theme .checkbox::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  transition: transform 200ms;
+  background-color: var(--first-color-main);
+}
+header .nav .nav-link.change-theme:hover .checkbox {
+  border: 2px solid var(--first-color-dark);
+}
+header .nav .nav-link.change-theme:hover .checkbox::before {
+  background-color: var(--first-color-dark);
+}
+header .nav .nav-link.change-theme:hover .checkbox.on {
+  border: 2px solid var(--first-color-main);
+}
+header .nav .nav-link.change-theme:hover .checkbox.on::before {
+  background-color: var(--first-color-main);
+  border: none;
+}
+header .nav .nav-link:hover * {
+  color: var(--first-color-dark);
+}
+header .nav .nav-link .nav-link-active * {
+  color: var(--first-color);
+}
+header .nav .nav-link .link-icon {
+  font-size: 1.75rem;
+}
+header .nav .nav-link .link-icon.link-exit {
+  color: var(--first-color-main);
+}
+header .nav .nav-link .link-text {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+header .nav .nav-options {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+header .nav .nav-options .menu-burger {
+  cursor: pointer;
+}/*# sourceMappingURL=Header.css.map */

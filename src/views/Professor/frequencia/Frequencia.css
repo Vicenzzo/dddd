@@ -1,0 +1,120 @@
+
+
+
+.teste2{
+    margin-left: -50%;
+}
+
+
+
+.containerChamada{
+    background-color: var(--theme-dark);
+    width: 800px;
+    height: 100%;
+    border-radius: 20px;
+    margin-left: -30%;
+}
+.headerChamada{
+    display: flex;
+
+}
+label{
+    justify-content: right;
+    align-items: right;
+    text-align: right;
+    margin-top: 30px;
+}
+h2{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.containerChamadaAluno{
+    width: 800px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+.cardChamadaAluno{
+    background-color: var(--theme-main);
+    flex: 1 1 300px;
+    height: 120px;
+    margin:  10px 30px 10px 30px;
+    border-radius: 20px;
+    display: flex;
+
+}
+.cardChamadaAluno img{
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 80px;
+    height: 65px;
+    
+    
+}
+
+input[type=date]{
+   
+
+
+    border: none;
+    background-color: #2561D1;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+input[type=checkbox]{
+    background-color: transparent;
+    border: 1px solid #2561D1;
+}
+.titleFilterRa{
+    margin-left: 10px;
+    margin-left: 20px;
+}
+.titleFilterAlfa{
+    margin-left: 35%;
+}
+.filter{
+    margin-right: 10px;
+    width: 15px; height: 10px; margin-top: 4%; margin-left: 10px;
+            
+    background-color: transparent; border: 1px solid #2A5ECA;
+}
+.handleTitleChamadaCurso{margin-top: 30px;
+    font-size: 15px;
+    float: left; margin-left: 40px; color: #2A5ECA;
+}
+.containerSubHeadle{
+    padding-top: 20px; margin-left: 60%;
+}
+.cardAluno{
+    margin-left: 20px;
+}
+.nomeAluno{
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom:-12px;
+}
+.identrAluno{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.infosMais{
+    text-decoration: none; color: #2A5ECA;
+}
+.cardButtonFaltou{
+    margin: 8% auto;
+}
+.btnFaltou{
+    color: var(--title-forms);
+    width: 20px; height: 20px; border-radius: 50%; border: 2px solid #2A5ECA; background-color: transparent; margin: 25px 0px 0px 30%;
+}
+.btnFaltou:hover{
+    background-color: #2A5ECA;
+}
+.pFaltou{
+    margin-top: 5px;
+}

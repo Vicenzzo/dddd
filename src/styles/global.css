@@ -1,0 +1,233 @@
+/*===== ROOT VARIABLES =====*/
+:root {
+  --hue: 216;
+  --first-color-main: hsl(var(--hue), 68%, 45%);
+  --first-color-dark: hsl(var(--hue), 68%, 30%);
+  --first-color-light: hsl(var(--hue), 68%, 70%);
+  --theme-main: hsl(0, 0%, 90%);
+  --theme-medium: hsl(0, 0%, 85%);
+  --theme-dark: hsl(0, 0%, 80%);
+  --theme-light: hsl(0, 0%, 95%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --contrast-main: #ff0;
+  --contrast-dark: #c7c700;
+}
+
+/*===== RESET CSS =====*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body #root .global {
+  background-color: var(--theme-light);
+  align-items: center;
+  color: var(--black);
+  display: flex;
+}
+body #root .global a {
+  text-decoration: none;
+  color: var(--black);
+}
+body #root .global.dark-theme {
+  /* Dark Theme Variables */
+  --theme-main: hsl(249, 16%, 20%);
+  --theme-medium: hsl(249, 16%, 21.5%);
+  --theme-dark: hsl(249, 16%, 15%);
+  --theme-light: hsl(249, 15%, 25%);
+  color: var(--white);
+}
+body #root .global.dark-theme .dataTables_wrapper .dataTables_info,
+body #root .global.dark-theme .dataTables_wrapper .dataTables_filter {
+  color: var(--white);
+}
+body #root .global.dark-theme a {
+  color: var(--white);
+}
+body #root .global.dark-theme #change-contrast {
+  display: none;
+}
+body #root .global.dark-theme .menu-burger::before, body #root .global.dark-theme .menu-burger::after,
+body #root .global.dark-theme .menu-burger div {
+  background: #fff;
+}
+body #root .global.body-contrast {
+  /* Constrast Theme Variables */
+  --theme-main: hsl(0, 0%, 2.5%);
+  --theme-medium: hsl(0, 0%, 3.5%);
+  --theme-dark: hsl(0, 0%, 1.5%);
+  --theme-light: hsl(0, 0%, 10%);
+  background-color: #000;
+  color: var(--white);
+}
+body #root .global.body-contrast a {
+  color: var(--contrast-dark);
+  text-decoration: underline;
+}
+body #root .global.body-contrast h1 {
+  color: var(--contrast-main);
+}
+body #root .global.body-contrast .button {
+  background: var(--contrast-main);
+  color: var(--black);
+}
+body #root .global.body-contrast .button:hover {
+  background: var(--contrast-dark);
+}
+body #root .global.body-contrast #change-contrast:hover .contrast {
+  border: 2px solid var(--contrast-main);
+}
+body #root .global.body-contrast #change-contrast:hover .contrast::before {
+  background-color: var(--contrast-main);
+}
+body #root .global.body-contrast .accessibility * {
+  text-decoration: none;
+}
+body #root .global.body-contrast .change-theme {
+  display: none;
+}
+body #root .global.body-contrast .nav-link-active *,
+body #root .global.body-contrast .link-exit,
+body #root .global.body-contrast a:hover,
+body #root .global.body-contrast a:hover *,
+body #root .global.body-contrast .info-test b,
+body #root .global.body-contrast .materia {
+  color: var(--contrast-main);
+}
+body #root .global.body-contrast .content-title-icon,
+body #root .global.body-contrast .modal-content-icon,
+body #root .global.body-contrast .modal-content-text b {
+  color: var(--contrast-dark);
+}
+body #root .global.body-contrast .important-announcement {
+  color: var(--white);
+}
+body #root .global.body-contrast .modal-button a {
+  background-color: var(--contrast-dark);
+  color: var(--white);
+}
+
+@media screen and (max-width: 1150px) {
+  body #root .global {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  body #root .global header {
+    width: 100vw;
+    height: 13rem;
+    flex-direction: column;
+    top: 0;
+    z-index: 5;
+    gap: 0;
+    position: fixed;
+  }
+  body #root .global .nav {
+    justify-content: space-between;
+    padding: 0rem 2.5vw;
+    width: 100vw;
+    height: 10rem;
+    background-color: var(--theme-main);
+    flex-direction: row;
+  }
+  body #root .global .nav-logo {
+    width: 9.5rem;
+  }
+  body #root .global .menu-burger {
+    display: block;
+    width: 30px;
+  }
+  body #root .global .menu-burger div, body #root .global .menu-burger::after, body #root .global .menu-burger::before {
+    background: var(--black);
+    content: "";
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    margin: 5px 0;
+    transition: 0.5s;
+  }
+  body #root .global .menu-burger.close::before {
+    transform: translateY(6.7px) rotate(135deg);
+  }
+  body #root .global .menu-burger.close::after {
+    transform: translateY(-6.7px) rotate(-135deg);
+  }
+  body #root .global .menu-burger.close div {
+    transform: scale(0);
+  }
+  body #root .global .change-theme {
+    position: absolute;
+    right: 2.5rem;
+    top: 1rem;
+  }
+  body #root .global .change-theme .link-text {
+    display: none;
+  }
+  body #root .global .accessibility {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    height: 3rem;
+  }
+  body #root .global main {
+    position: relative;
+    padding: 18rem 0 5rem;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
+@media screen and (max-width: 768px) {
+  body #root .global .nav-logo {
+    width: 8rem;
+  }
+  body #root .global .link-icon {
+    font-size: 1.5rem;
+  }
+  body #root .global .link-text {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 600px) {
+  body #root .global .nav-logo {
+    width: 6.5rem;
+  }
+  body #root .global .menu-burger {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 492px) {
+  body #root .global .nav-logo {
+    width: 4.75rem;
+  }
+  body #root .global .menu-burger {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content-title {
+    font-weight: 600;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content-title-icon {
+    font-size: 2rem;
+    color: var(--first-color-main);
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}/*# sourceMappingURL=global.css.map */

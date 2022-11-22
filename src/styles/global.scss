@@ -1,0 +1,311 @@
+/*===== ROOT VARIABLES =====*/
+:root {
+  --hue: 216;
+  --first-color-main: hsl(var(--hue), 68%, 45%);
+  --first-color-dark: hsl(var(--hue), 68%, 30%);
+  --first-color-light: hsl(var(--hue), 68%, 70%);
+  --theme-main: hsl(0, 0%, 90%);
+  --theme-medium: hsl(0, 0%, 85%);
+  --theme-dark: hsl(0, 0%, 80%);
+  --theme-light: hsl(0, 0%, 95%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --contrast-main: #ff0;
+  --contrast-dark: #c7c700;
+}
+
+/*===== RESET CSS =====*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  #root {
+    .global {
+      background-color: var(--theme-light);
+      align-items: center;
+      color: var(--black);
+      display: flex;
+
+      a {
+        text-decoration: none;
+        color: var(--black);
+      }
+
+      &.dark-theme {
+        /* Dark Theme Variables */
+        --theme-main: hsl(249, 16%, 20%);
+        --theme-medium: hsl(249, 16%, 21.5%);
+        --theme-dark: hsl(249, 16%, 15%);
+        --theme-light: hsl(249, 15%, 25%);
+        color: var(--white);
+
+        .dataTables_wrapper {
+          .dataTables_info,
+          .dataTables_filter {
+            color: var(--white);
+          }
+        }
+
+        a {
+          color: var(--white);
+        }
+
+        #change-contrast {
+          display: none;
+        }
+
+        .menu-burger {
+          &::before,
+          &::after,
+          div {
+            background: #fff;
+          }
+        }
+      }
+
+      &.body-contrast {
+        /* Constrast Theme Variables */
+        --theme-main: hsl(0, 0%, 2.5%);
+        --theme-medium: hsl(0, 0%, 3.5%);
+        --theme-dark: hsl(0, 0%, 1.5%);
+        --theme-light: hsl(0, 0%, 10%);
+        background-color: #000;
+        color: var(--white);
+
+        a {
+          color: var(--contrast-dark);
+          text-decoration: underline;
+        }
+
+        h1 {
+          color: var(--contrast-main);
+        }
+
+        .button {
+          background: var(--contrast-main);
+          color: var(--black);
+
+          &:hover {
+            background: var(--contrast-dark);
+          }
+        }
+
+        #change-contrast {
+          &:hover {
+            .contrast {
+              border: 2px solid var(--contrast-main);
+
+              &::before {
+                background-color: var(--contrast-main);
+              }
+            }
+          }
+        }
+
+        .accessibility {
+          * {
+            text-decoration: none;
+          }
+        }
+
+        .change-theme {
+          display: none;
+        }
+
+        .nav-link-active *,
+        .link-exit,
+        a:hover,
+        a:hover *,
+        .info-test b,
+        .materia {
+          color: var(--contrast-main);
+        }
+
+        .content-title-icon,
+        .modal-content-icon,
+        .modal-content-text b {
+          color: var(--contrast-dark);
+        }
+
+        .important-announcement {
+          color: var(--white);
+        }
+
+        .modal-button {
+          a {
+            background-color: var(--contrast-dark);
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  body {
+    #root {
+      .global {
+        flex-direction: column;
+        min-height: 100vh;
+
+        header {
+          width: 100vw;
+          height: 13rem;
+          flex-direction: column;
+          top: 0;
+          z-index: 5;
+          gap: 0;
+          position: fixed;
+        }
+
+        .nav {
+          justify-content: space-between;
+          padding: 0rem 2.5vw;
+          width: 100vw;
+          height: 10rem;
+          background-color: var(--theme-main);
+          flex-direction: row;
+        }
+
+        .nav-logo {
+          width: 9.5rem;
+        }
+
+        .menu-burger {
+          display: block;
+          width: 30px;
+
+          div,
+          &::after,
+          &::before {
+            background: var(--black);
+            content: "";
+            display: block;
+            height: 2px;
+            border-radius: 2px;
+            margin: 5px 0;
+            transition: 0.5s;
+          }
+
+          &.close {
+            &::before {
+              transform: translateY(6.7px) rotate(135deg);
+            }
+
+            &::after {
+              transform: translateY(-6.7px) rotate(-135deg);
+            }
+
+            div {
+              transform: scale(0);
+            }
+          }
+        }
+
+        .change-theme {
+          position: absolute;
+          right: 2.5rem;
+          top: 1rem;
+
+          .link-text {
+            display: none;
+          }
+        }
+
+        .accessibility {
+          display: flex;
+          width: 100vw;
+          justify-content: space-around;
+          height: 3rem;
+        }
+
+        main {
+          position: relative;
+          padding: 18rem 0 5rem;
+          height: max-content;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    #root {
+      .global {
+        .nav-logo {
+          width: 8rem;
+        }
+
+        .link-icon {
+          font-size: 1.5rem;
+        }
+
+        .link-text {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    body {
+      #root {
+        .global {
+          .nav-logo {
+            width: 6.5rem;
+          }
+
+          .menu-burger {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 492px) {
+    body {
+      #root {
+        .global {
+          .nav-logo {
+            width: 4.75rem;
+          }
+
+          .menu-burger {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .content-title {
+    font-weight: 600;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .content-title-icon {
+    font-size: 2rem;
+    color: var(--first-color-main);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
